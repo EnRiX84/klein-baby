@@ -5,7 +5,7 @@
     left: 0;
     right: 0;
     background: #1a1a2e;
-    border-top: 2px solid #E91E8C;
+    border-top: 2px solid #FF1493;
     padding: 1.5rem 2rem;
     z-index: 10000;
     transform: translateY(100%);
@@ -36,7 +36,7 @@
 }
 
 .cookie-banner-text a {
-    color: #E91E8C;
+    color: #FF1493;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
@@ -64,7 +64,7 @@
 }
 
 .cookie-btn-accept {
-    background: #E91E8C;
+    background: #FF1493;
     color: #fff;
 }
 
@@ -79,8 +79,8 @@
 }
 
 .cookie-btn-reject:hover {
-    border-color: #00BCD4;
-    color: #00BCD4;
+    border-color: #1E90FF;
+    color: #1E90FF;
 }
 
 /* ===== Cookie Gear Icon ===== */
@@ -91,7 +91,7 @@
     width: 44px;
     height: 44px;
     background: #1a1a2e;
-    border: 2px solid #E91E8C;
+    border: 2px solid #FF1493;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -110,7 +110,7 @@
 }
 
 .cookie-gear:hover {
-    background: #E91E8C;
+    background: #FF1493;
 }
 
 .cookie-gear:hover i {
@@ -118,7 +118,7 @@
 }
 
 .cookie-gear i {
-    color: #E91E8C;
+    color: #FF1493;
     font-size: 1.1rem;
     transition: color 0.3s ease;
 }
@@ -143,7 +143,7 @@
 
 .map-placeholder i {
     font-size: 2rem;
-    color: #E91E8C;
+    color: #FF1493;
 }
 
 .map-placeholder p {
@@ -154,7 +154,7 @@
 
 .map-placeholder-btn {
     padding: 0.5rem 1.2rem;
-    background: #E91E8C;
+    background: #FF1493;
     color: #fff;
     border: none;
     border-radius: 50px;
@@ -187,7 +187,7 @@
 
 .policy-content h1 {
     font-family: 'Fredoka', sans-serif;
-    color: #E91E8C;
+    color: #FF1493;
     font-size: 2.2rem;
     margin-bottom: 0.5rem;
 }
@@ -200,7 +200,7 @@
 
 .policy-content h2 {
     font-family: 'Fredoka', sans-serif;
-    color: #E91E8C;
+    color: #FF1493;
     font-size: 1.4rem;
     margin-top: 2.5rem;
     margin-bottom: 1rem;
@@ -209,7 +209,7 @@
 }
 
 .policy-content h3 {
-    color: #00BCD4;
+    color: #1E90FF;
     font-size: 1.1rem;
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
@@ -232,7 +232,7 @@
 }
 
 .policy-content a {
-    color: #E91E8C;
+    color: #FF1493;
     text-decoration: underline;
     text-underline-offset: 2px;
 }
@@ -261,7 +261,7 @@
 
 .policy-content th {
     background: #1a1a2e;
-    color: #E91E8C;
+    color: #FF1493;
     font-weight: 600;
 }
 
@@ -275,7 +275,7 @@
     gap: 0.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    color: #E91E8C;
+    color: #FF1493;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;

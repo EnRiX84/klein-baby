@@ -14,7 +14,7 @@
 .gc-hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(233, 30, 140, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(30, 144, 255, 0.08) 0%, transparent 70%);
 }
 
 .gc-hero-content {
@@ -132,7 +132,7 @@
     left: 8px;
     right: 8px;
     bottom: 8px;
-    border: 1px solid rgba(233, 30, 140, 0.3);
+    border: 1px solid rgba(30, 144, 255, 0.3);
     border-radius: 14px;
     pointer-events: none;
 }
@@ -146,7 +146,7 @@
 
 .gc-card-brand-sub {
     font-size: 0.7rem;
-    color: var(--cyan);
+    color: var(--blue-light);
     margin-bottom: 1rem;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .gc-card-message {
-    color: var(--cyan-light);
+    color: var(--yellow-light);
     font-style: italic;
     font-size: 0.85rem;
     margin: 0.5rem 0;
@@ -236,7 +236,7 @@
 
 .gc-amount-btn:hover {
     border-color: var(--pink);
-    background: rgba(233, 30, 140, 0.1);
+    background: rgba(30, 144, 255, 0.1);
 }
 
 .gc-amount-btn.active {
@@ -288,7 +288,7 @@
 .gc-input-with-icon input:focus {
     outline: none;
     border-color: var(--pink);
-    box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.15);
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.15);
 }
 
 .gc-input-with-icon input::placeholder {
@@ -316,7 +316,7 @@
 .gc-form .form-group input:focus,
 .gc-form .form-group textarea:focus {
     border-color: var(--pink);
-    box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.15);
+    box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.15);
 }
 
 .gc-form .form-group label {
@@ -439,7 +439,7 @@
 
 .gc-success-card {
     background: var(--dark-soft);
-    border: 1px solid rgba(233, 30, 140, 0.3);
+    border: 1px solid rgba(30, 144, 255, 0.3);
     border-radius: var(--radius);
     padding: 1.5rem;
     margin: 1.5rem 0;

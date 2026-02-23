@@ -114,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // === Hero Confetti Particles ===
     const particlesContainer = document.getElementById('particles');
     if (particlesContainer) {
-        const colors = ['pink', 'cyan', 'purple', 'yellow', 'green'];
-        for (let i = 0; i < 35; i++) {
+        const colors = ['pink', 'blue', 'purple', 'yellow', 'green', 'orange', 'red'];
+        for (let i = 0; i < 45; i++) {
             const particle = document.createElement('div');
             particle.classList.add('particle');
             particle.classList.add(colors[Math.floor(Math.random() * colors.length)]);
