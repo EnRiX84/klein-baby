@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card - Klein Baby</title>
+    <meta name="description" content="Regala un buono regalo Klein Baby. Il regalo perfetto per ogni occasione. Acquista online e il destinatario riceverà il buono via email.">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gift-card.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Klein</span>
+                <span class="logo-sub">Baby</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#chi-siamo" class="nav-link">Chi Siamo</a></li>
+                <li><a href="index.html#brand" class="nav-link">Brand</a></li>
+                <li><a href="index.html#collezioni" class="nav-link">Collezioni</a></li>
+                <li><a href="index.html#promozioni" class="nav-link">Promozioni</a></li>
+                <li><a href="gift-card.html" class="nav-link">Gift Card</a></li>
+                <li><a href="index.html#negozio" class="nav-link">Negozio</a></li>
+                <li><a href="index.html#news" class="nav-link">News</a></li>
+                <li><a href="index.html#contatti" class="nav-link">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero compatto -->
+    <section class="gc-hero">
+        <div class="gc-hero-overlay"></div>
+        <div class="container">
+            <div class="gc-hero-content">
+                <span class="section-tag">Il Regalo Perfetto</span>
+                <h1 class="gc-hero-title">Regala un <span class="pink-text">Buono Regalo</span></h1>
+                <p class="gc-hero-subtitle">Sorprendi chi ami con una Gift Card Klein Baby. Utilizzabile nel nostro store.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Come Funziona -->
+    <section class="gc-steps section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Semplice e Veloce</span>
+                <h2 class="section-title">Come Funziona</h2>
+                <div class="title-divider"><span></span></div>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fas fa-euro-sign"></i></div>
+                    <h3>Scegli l'Importo</h3>
+                    <p>Da 10 a 500 euro, scegli quanto vuoi regalare</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>Paga Online</h3>
+                    <p>Pagamento sicuro con carta di credito via Stripe</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Ricevi via Email</h3>
+                    <p>Il destinatario riceve il buono regalo in PDF via email</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Acquisto -->
+    <section id="gc-form-section" class="gc-form-section section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Acquista Online</span>
+                <h2 class="section-title">Configura la Tua Gift Card</h2>
+                <div class="title-divider"><span></span></div>
+            </div>
+
+            <div class="gc-form-wrapper">
+                <!-- Preview Gift Card -->
+                <div class="gc-preview">
+                    <div class="gc-card-preview">
+                        <div class="gc-card-inner">
+                            <div class="gc-card-brand">KLEIN BABY</div>
+                            <div class="gc-card-brand-sub">di Seggio Rosaria</div>
+                            <div class="gc-card-title">Buono Regalo per Te</div>
+                            <div class="gc-card-amount" id="previewAmount">&euro;50,00</div>
+                            <div class="gc-card-recipient" id="previewRecipient">Per: Nome Destinatario</div>
+                            <div class="gc-card-from" id="previewFrom">Da parte di: Il tuo nome</div>
+                            <div class="gc-card-message" id="previewMessage"></div>
+                            <div class="gc-card-code">GC-XXXX-XXXX-XXXX</div>
+                            <div class="gc-card-footer">Klein Baby - Campobello di Licata (AG)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="giftCardForm" class="gc-form" novalidate>
+                    <!-- Importo -->
+                    <div class="gc-section-label">Importo</div>
+                    <div class="gc-amount-grid">
+                        <button type="button" class="gc-amount-btn" data-amount="25">&euro;25</button>
+                        <button type="button" class="gc-amount-btn active" data-amount="50">&euro;50</button>
+                        <button type="button" class="gc-amount-btn" data-amount="75">&euro;75</button>
+                        <button type="button" class="gc-amount-btn" data-amount="100">&euro;100</button>
+                    </div>
+                    <div class="gc-custom-amount">
+                        <label for="customAmount">Oppure inserisci un importo personalizzato (10-500 &euro;)</label>
+                        <div class="gc-input-with-icon">
+                            <span class="gc-input-prefix">&euro;</span>
+                            <input type="number" id="customAmount" min="10" max="500" placeholder="Es. 150">
+                        </div>
+                    </div>
+
+                    <!-- Dati Acquirente -->
+                    <div class="gc-section-label">I Tuoi Dati</div>
+                    <div class="gc-form-row">
+                        <div class="form-group">
+                            <input type="text" id="purchaserName" placeholder="Il tuo nome" required>
+                            <label for="purchaserName">Il tuo nome</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="purchaserEmail" placeholder="La tua email" required>
+                            <label for="purchaserEmail">La tua email</label>
+                        </div>
+                    </div>
+
+                    <!-- Dati Destinatario -->
+                    <div class="gc-section-label">Chi Riceverà il Buono</div>
+                    <div class="gc-form-row">
+                        <div class="form-group">
+                            <input type="text" id="recipientName" placeholder="Nome destinatario" required>
+                            <label for="recipientName">Nome destinatario</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="recipientEmail" placeholder="Email destinatario" required>
+                            <label for="recipientEmail">Email destinatario</label>
+                        </div>
+                    </div>
+
+                    <!-- Messaggio -->
+                    <div class="gc-section-label">Messaggio (opzionale)</div>
+                    <div class="form-group">
+                        <textarea id="giftMessage" rows="3" placeholder="Scrivi un messaggio personalizzato..." maxlength="500"></textarea>
+                        <label for="giftMessage">Messaggio personalizzato</label>
+                    </div>
+                    <div class="gc-char-count"><span id="charCount">0</span>/500</div>
+
+                    <!-- Riepilogo -->
+                    <div class="gc-summary">
+                        <div class="gc-summary-row">
+                            <span>Importo Gift Card</span>
+                            <span id="summaryAmount">&euro;50,00</span>
+                        </div>
+                        <div class="gc-summary-row gc-summary-total">
+                            <span>Totale</span>
+                            <span id="summaryTotal">&euro;50,00</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="btn btn-primary btn-lg btn-block gc-submit" id="submitBtn">
+                        <i class="fas fa-lock"></i>
+                        <span>Acquista con Carta</span>
+                    </button>
+                    <p class="gc-secure-note"><i class="fas fa-shield-alt"></i> Pagamento sicuro gestito da Stripe. I tuoi dati sono al sicuro.</p>
+
+                    <!-- Error -->
+                    <div class="gc-error" id="formError" style="display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conferma -->
+    <section id="gc-success" class="gc-success section" style="display: none;">
+        <div class="container">
+            <div class="gc-success-content">
+                <div class="gc-success-icon"><i class="fas fa-check-circle"></i></div>
+                <h2>Gift Card Acquistata!</h2>
+                <p class="gc-success-subtitle">Il destinatario riceverà a breve un'email con il buono regalo in formato PDF.</p>
+                <div class="gc-success-details" id="successDetails"></div>
+                <div class="gc-success-actions">
+                    <a href="gift-card.html" class="btn btn-primary">Acquista un'altra Gift Card</a>
+                    <a href="index.html" class="btn btn-outline">Torna alla Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cancellato -->
+    <section id="gc-cancelled" class="gc-cancelled section" style="display: none;">
+        <div class="container">
+            <div class="gc-cancelled-content">
+                <div class="gc-cancelled-icon"><i class="fas fa-times-circle"></i></div>
+                <h2>Pagamento Annullato</h2>
+                <p>Il pagamento non è stato completato. Nessun addebito è stato effettuato.</p>
+                <a href="gift-card.html" class="btn btn-primary" style="margin-top: 2rem;">Riprova</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <span class="logo-text">Klein</span>
+                            <span class="logo-sub">Baby</span>
+                        </div>
+                        <p>Abbigliamento per bambini e ragazzi da 0 a 16 anni. Le migliori marche con amore e stile.</p>
+                        <div class="footer-social">
+                            <a href="https://wa.me/39338171093" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Link Rapidi</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#brand">Brand</a></li>
+                            <li><a href="index.html#collezioni">Collezioni</a></li>
+                            <li><a href="gift-card.html">Gift Card</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Info</h4>
+                        <ul>
+                            <li><a href="index.html#negozio">Il Nostro Negozio</a></li>
+                            <li><a href="index.html#contatti">Contatti</a></li>
+                            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Orari</h4>
+                        <p>Lun - Sab</p>
+                        <p><strong>9:15 - 13:00</strong></p>
+                        <p><strong>16:30 - 20:15</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Klein Baby di Seggio Rosaria. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a> | <a href="privacy-policy.html">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        // === Config ===
+        const API_BASE = 'https://api.kleinbaby.it/api/v1/public/gift-cards';
+
+        // === DOM Elements ===
+        const form = document.getElementById('giftCardForm');
+        const formSection = document.getElementById('gc-form-section');
+        const successSection = document.getElementById('gc-success');
+        const cancelledSection = document.getElementById('gc-cancelled');
+        const stepsSection = document.querySelector('.gc-steps');
+        const heroSection = document.querySelector('.gc-hero');
+        const submitBtn = document.getElementById('submitBtn');
+        const formError = document.getElementById('formError');
+
+        const amountBtns = document.querySelectorAll('.gc-amount-btn');
+        const customAmountInput = document.getElementById('customAmount');
+        const previewAmount = document.getElementById('previewAmount');
+        const summaryAmount = document.getElementById('summaryAmount');
+        const summaryTotal = document.getElementById('summaryTotal');
+
+        const previewRecipient = document.getElementById('previewRecipient');
+        const previewFrom = document.getElementById('previewFrom');
+        const previewMessage = document.getElementById('previewMessage');
+
+        const purchaserNameInput = document.getElementById('purchaserName');
+        const purchaserEmailInput = document.getElementById('purchaserEmail');
+        const recipientNameInput = document.getElementById('recipientName');
+        const recipientEmailInput = document.getElementById('recipientEmail');
+        const messageInput = document.getElementById('giftMessage');
+        const charCount = document.getElementById('charCount');
+
+        let selectedAmount = 50;
+
+        const urlParams = new URLSearchParams(window.location.search);
+
+        if (urlParams.get('success') === 'true') {
+            showSuccessPage(urlParams.get('session_id'));
+            return;
+        }
+
+        if (urlParams.get('cancelled') === 'true') {
+            showCancelledPage();
+            return;
+        }
+
+        function formatEuro(amount) {
+            return '\u20AC' + amount.toFixed(2).replace('.', ',');
+        }
+
+        function updateAmount(amount) {
+            selectedAmount = amount;
+            previewAmount.textContent = formatEuro(amount);
+            summaryAmount.textContent = formatEuro(amount);
+            summaryTotal.textContent = formatEuro(amount);
+        }
+
+        amountBtns.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                amountBtns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                customAmountInput.value = '';
+                updateAmount(parseInt(btn.dataset.amount));
+            });
+        });
+
+        customAmountInput.addEventListener('input', function() {
+            var val = parseInt(this.value);
+            if (val >= 10 && val <= 500) {
+                amountBtns.forEach(function(b) { b.classList.remove('active'); });
+                updateAmount(val);
+            }
+        });
+
+        recipientNameInput.addEventListener('input', function() {
+            previewRecipient.textContent = this.value ? 'Per: ' + this.value : 'Per: Nome Destinatario';
+        });
+
+        purchaserNameInput.addEventListener('input', function() {
+            previewFrom.textContent = this.value ? 'Da parte di: ' + this.value : 'Da parte di: Il tuo nome';
+        });
+
+        messageInput.addEventListener('input', function() {
+            charCount.textContent = this.value.length;
+            previewMessage.textContent = this.value ? '"' + this.value + '"' : '';
+        });
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            formError.style.display = 'none';
+
+            var purchaserName = purchaserNameInput.value.trim();
+            var purchaserEmail = purchaserEmailInput.value.trim();
+            var recipientName = recipientNameInput.value.trim();
+            var recipientEmail = recipientEmailInput.value.trim();
+            var message = messageInput.value.trim();
+
+            if (!purchaserName || purchaserName.length < 2) {
+                showError('Inserisci il tuo nome (minimo 2 caratteri)');
+                return;
+            }
+            if (!purchaserEmail || !isValidEmail(purchaserEmail)) {
+                showError('Inserisci una email valida');
+                return;
+            }
+            if (!recipientName || recipientName.length < 2) {
+                showError('Inserisci il nome del destinatario (minimo 2 caratteri)');
+                return;
+            }
+            if (!recipientEmail || !isValidEmail(recipientEmail)) {
+                showError('Inserisci una email valida per il destinatario');
+                return;
+            }
+            if (selectedAmount < 10 || selectedAmount > 500) {
+                showError('L\'importo deve essere tra 10 e 500 euro');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Elaborazione...</span>';
+
+            try {
+                var response = await fetch(API_BASE + '/checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount: selectedAmount,
+                        purchaserName: purchaserName,
+                        purchaserEmail: purchaserEmail,
+                        recipientName: recipientName,
+                        recipientEmail: recipientEmail,
+                        message: message || undefined,
+                    }),
+                });
+
+                var data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Errore nella creazione del pagamento');
+                }
+
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    throw new Error('URL di pagamento non disponibile');
+                }
+            } catch (err) {
+                showError(err.message || 'Si è verificato un errore. Riprova.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-lock"></i> <span>Acquista con Carta</span>';
+            }
+        });
+
+        function showError(msg) {
+            formError.textContent = msg;
+            formError.style.display = 'block';
+            formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        async function showSuccessPage(sessionId) {
+            heroSection.style.display = 'none';
+            if (stepsSection) stepsSection.style.display = 'none';
+            formSection.style.display = 'none';
+            cancelledSection.style.display = 'none';
+            successSection.style.display = 'block';
+
+            if (!sessionId) return;
+
+            var details = document.getElementById('successDetails');
+            details.innerHTML = '<p class="gc-loading"><i class="fas fa-spinner fa-spin"></i> Caricamento dettagli...</p>';
+
+            var attempts = 0;
+            var maxAttempts = 10;
+
+            async function checkStatus() {
+                try {
+                    var response = await fetch(API_BASE + '/status/' + sessionId);
+                    var data = await response.json();
+
+                    if (data.status === 'completed' && data.giftCard) {
+                        var gc = data.giftCard;
+                        var amount = parseFloat(gc.initialAmount);
+                        details.innerHTML =
+                            '<div class="gc-success-card">' +
+                            '<div class="gc-success-row"><span>Importo</span><strong>' + formatEuro(amount) + '</strong></div>' +
+                            '<div class="gc-success-row"><span>Destinatario</span><strong>' + gc.recipientName + '</strong></div>' +
+                            '<div class="gc-success-row"><span>Email destinatario</span><strong>' + gc.recipientEmail + '</strong></div>' +
+                            '</div>';
+                    } else if (attempts < maxAttempts) {
+                        attempts++;
+                        setTimeout(checkStatus, 2000);
+                    } else {
+                        details.innerHTML = '<p>Il buono regalo è stato acquistato. L\'email verrà inviata a breve al destinatario.</p>';
+                    }
+                } catch (err) {
+                    details.innerHTML = '<p>Il buono regalo è stato acquistato. L\'email verrà inviata a breve al destinatario.</p>';
+                }
+            }
+
+            checkStatus();
+        }
+
+        function showCancelledPage() {
+            heroSection.style.display = 'none';
+            if (stepsSection) stepsSection.style.display = 'none';
+            formSection.style.display = 'none';
+            successSection.style.display = 'none';
+            cancelledSection.style.display = 'block';
+        }
+
+        var navToggle = document.getElementById('navToggle');
+        var navMenu = document.getElementById('navMenu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            });
+        }
+    })();
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Consenso cookie">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                Questo sito utilizza cookie tecnici necessari al funzionamento e, previo tuo consenso, cookie di terze parti (Google Maps) per mostrare la mappa del negozio. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a> e la <a href="privacy-policy.html">Privacy Policy</a>.
+            </div>
+            <div class="cookie-banner-actions">
+                <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptAll">Accetta Tutti</button>
+                <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectAll">Solo Necessari</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookieGear" class="cookie-gear" title="Preferenze cookie" aria-label="Modifica preferenze cookie">
+        <i class="fas fa-cookie-bite"></i>
+    </div>
+
+    <script src="js/cookie-consent.js"></script>
+</body>
+</html>
