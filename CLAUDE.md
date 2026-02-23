@@ -18,15 +18,33 @@
 - **Branch di deploy**: `master`
 
 ## Palette Colori
-Derivata dalle foto dell'insegna reale del negozio (rosa/fucsia e ciano):
-- **Pink**: #E91E8C (primario)
-- **Pink Light**: #FF6EB4
-- **Pink Dark**: #C2185B
-- **Cyan**: #00BCD4 (accento)
-- **Cyan Light**: #4DD0E1
-- **Cyan Dark**: #0097A7
-- **Dark (sfondo scuro)**: #1a1a2e
-- **Off-white (sfondo chiaro)**: #fef9ff
+Palette vivace e multicolore ispirata al branding reale del negozio: insegna neon (rosa+blu), vetrine con fiori/farfalle colorati, sacchetto spesa con lettere arcobaleno.
+
+**Colori primari (dall'insegna neon):**
+- **Pink**: #FF1493 (rosa vivace, "Klein")
+- **Pink Light**: #FF69B4
+- **Pink Dark**: #D4006A
+- **Blue**: #1E90FF (blu brillante, "Baby")
+- **Blue Light**: #5BB5FF
+- **Blue Dark**: #0066CC
+
+**Colori accento (dalle decorazioni del negozio):**
+- **Green**: #4CAF50 / Light: #81C784
+- **Orange**: #FF9800 / Light: #FFB74D
+- **Yellow**: #FFD600 / Light: #FFF176
+- **Purple**: #AB47BC / Light: #CE93D8
+- **Red**: #EF5350
+
+**Sfondi:**
+- **Dark**: #1a1a2e
+- **Off-white**: #FFFDF7
+- **Cream**: #FFF8F0
+
+**Gradienti principali:**
+- `--rainbow-gradient`: pink -> orange -> yellow -> green -> blue -> purple
+- `--shine`: arcobaleno animato con shimmer per titoli e promozioni
+- `--primary-gradient`: sfumatura rosa per bottoni principali
+- `--accent-gradient`: sfumatura blu per bottoni secondari
 
 ## Struttura File
 
@@ -78,7 +96,7 @@ kleinbaby/
 - **Active nav link**: IntersectionObserver evidenzia il link della sezione visibile
 - **AOS (Animate On Scroll)**: implementazione leggera custom con IntersectionObserver e data-aos attributes (fade-up, fade-down, fade-left, fade-right, zoom-in)
 - **Contatori animati**: animazione incrementale dei numeri nella sezione Chi Siamo
-- **Particelle hero**: 35 particelle confetti colorate (pink, cyan, purple, yellow, green)
+- **Particelle hero**: 45 particelle confetti in 7 colori (pink, blue, purple, yellow, green, orange, red)
 - **Back to top**: bottone visibile dopo 500px di scroll
 - **Smooth scroll**: per tutti i link ancora (#)
 - **Form contatto**: costruisce messaggio WhatsApp e apre wa.me
@@ -119,3 +137,25 @@ kleinbaby/
 - Abilitazione GitHub Pages via API (build_type: workflow)
 - Fix path favicon: da assoluti (/favicon.ico) a relativi (favicon.ico) per compatibilita GitHub Pages subdirectory
 - Sito live su: https://enrix84.github.io/klein-baby/
+
+### Sessione 3 (23 feb 2026)
+- Restyling completo della palette colori: da monocromo (rosa+ciano) a multicolore vivace (arcobaleno)
+- Analisi approfondita delle foto del negozio reale per estrarre i colori giusti:
+  - insegnasulmuro.jpg (neon): rosa "Klein" + blu "Baby"
+  - arredointerno1.jpg (vetrina): fiori arancioni/rosa, farfalle colorate, arcobaleno
+  - arredointerno2.jpg (porta): albero colorato con rosa/verde/giallo/viola
+  - sacchettospesa.jpg: logo con ogni lettera di colore diverso (stile arcobaleno)
+- Aggiornamento completo CSS variables: nuovi colori primari (pink #FF1493, blue #1E90FF) e accenti (green, orange, yellow, purple, red)
+- Nuovi gradienti: --rainbow-gradient, --rainbow-gradient-h, --shine (arcobaleno animato)
+- Aggiornato hero: "0-16 Anni" con effetto shimmer arcobaleno (.rainbow-text), title accent con rainbow animato
+- Particelle hero: da 5 a 7 colori, da 35 a 45 particelle
+- Contatori Chi Siamo: ogni numero un colore diverso (arancione, blu, verde)
+- Card collezioni: neonati=rosa, bambini=blu, ragazzi=verde, cerimonia=arancione
+- Prezzi promozioni: ogni fascia prezzo un colore diverso con bordi colorati
+- News cards: icone arancione, blu, verde (al posto di rosa, cyan, viola)
+- Bordi e hover effects: da rosa monotono a rainbow shadow multicolore
+- Form contatto: focus blu invece di rosa
+- Favicon SVG: bordo arcobaleno (5 colori), K rosa, B blu
+- Cookie consent CSS: aggiornati colori da #E91E8C/#00BCD4 a #FF1493/#1E90FF
+- Gift card CSS: aggiornati tutti i riferimenti colore alla nuova palette
+- Aggiornata immagine logo ritagliata (insegnasulmuro.jpg) e pushata
