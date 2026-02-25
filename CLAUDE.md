@@ -6,7 +6,9 @@
 - **Sede**: Via Reg. Margherita, 125 - 92023 Campobello di Licata (AG)
 - **Telefono/WhatsApp**: 338 171 0933
 - **Repository**: https://github.com/EnRiX84/klein-baby
-- **Sito live**: https://enrix84.github.io/klein-baby/
+- **Sito live**: https://www.kleinbaby.it/
+- **Dominio**: www.kleinbaby.it (custom domain su GitHub Pages)
+- **URL alternativo**: https://enrix84.github.io/klein-baby/ (redirect automatico)
 - **Progetto di riferimento**: C:\workspace\grandi_firme\ (stesse funzionalita, palette diversa)
 
 ## Stack Tecnico
