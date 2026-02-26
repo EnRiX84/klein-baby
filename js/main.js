@@ -168,14 +168,15 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.disabled = true;
             btn.innerHTML = '<span>Invio in corso...</span> <i class="fas fa-spinner fa-spin"></i>';
 
-            // Build WhatsApp message as fallback
-            const waText = `Ciao! Sono ${name} (${email}${phone ? ', ' + phone : ''}).\n\n${message}`;
-            const waURL = `https://wa.me/393381710933?text=${encodeURIComponent(waText)}`;
+            // Build mailto link
+            const subject = `Richiesta informazioni da ${name}`;
+            const body = `Nome: ${name}\nEmail: ${email}${phone ? '\nTelefono: ' + phone : ''}\n\nMessaggio:\n${message}`;
+            const mailtoURL = `mailto:info@kleinbaby.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            // Since there is no backend API yet, redirect to WhatsApp
-            btn.innerHTML = '<span>Apertura WhatsApp...</span> <i class="fab fa-whatsapp"></i>';
+            // Open user's email client
+            btn.innerHTML = '<span>Apertura email...</span> <i class="fas fa-envelope"></i>';
             setTimeout(() => {
-                window.open(waURL, '_blank');
+                window.location.href = mailtoURL;
                 btn.innerHTML = '<span>Messaggio Inviato!</span> <i class="fas fa-check"></i>';
                 btn.style.background = '#2d8a4e';
                 contactForm.reset();

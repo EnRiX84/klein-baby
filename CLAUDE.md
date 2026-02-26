@@ -161,3 +161,37 @@ kleinbaby/
 - Cookie consent CSS: aggiornati colori da #E91E8C/#00BCD4 a #FF1493/#1E90FF
 - Gift card CSS: aggiornati tutti i riferimenti colore alla nuova palette
 - Aggiornata immagine logo ritagliata (insegnasulmuro.jpg) e pushata
+
+### Sessione 4 (25 feb 2026)
+- Implementato sistema settings per-tenant in StockFlow ERP (repo: C:\workspace\stockflowERP)
+- Backend: validazione Zod per settings (smtp + branding hex), merge intelligente in updateTenant (Prisma.JsonNull), branding dinamico in PDF e email gift card
+- Frontend: interfacce TS per settings, sezione Configurazione in SATenantDetailPage con toggle SMTP/branding, color picker, anteprima live card
+- Configurato branding Klein Baby nel DB: rosa #FF1493, blu #1E90FF, sfondo #1a1a2e, testo #FFFFFF, accento #FF69B4
+- SMTP Klein Baby: noreply@kleinbaby.it via smtps.aruba.it
+- Grandi Firme: SMTP + branding oro/nero configurati dall'utente via UI superadmin
+- Rimosso fallback globale SMTP: senza settings → 503 "Servizio momentaneamente non disponibile"
+- Fix domain resolver: aggiunto match `www.${baseDomain}` così `api.kleinbaby.it` risolve Klein Baby (DB ha `www.kleinbaby.it`)
+- Fix impersonation: `impersonate()` reso async + await, la dashboard si carica correttamente senza refresh manuale
+- Deploy: build locale + SCP + PM2 restart su Oracle Cloud VM (backend + frontend)
+- Password rosaria@esempio.it resettata a admin123
+- Aggiunto reset password per SUPERADMIN: endpoint PUT /superadmin/users/:userId/reset-password + UI con modale (icona chiave)
+- Fix PDF gift card: da 3 pagine a 1 pagina (bottom margin 0, lineBreak:false, messaggio max 120 char, validità nella stessa pagina)
+
+### Sessione 5 (26 feb 2026)
+- **Stripe per-tenant** in StockFlow ERP (repo: C:\workspace\stockflowERP):
+  - Validator Zod: aggiunto `stripeSettingsSchema` (secretKey + webhookSecret) in `server/src/validators/superadmin.ts`
+  - Backend service: merge `stripe` in updateTenant come smtp/branding (`server/src/services/superadmin.ts`)
+  - Gift card service: rimosso singleton globale Stripe, istanza creata al volo da `tenantInfo.stripe.secretKey` con fallback a config.stripe.secretKey; senza nessuno dei due → test mode (`server/src/services/giftCardPublic.ts`)
+  - Webhook controller: try-all secrets - carica tutti i tenant con stripe configurato, prova ogni webhookSecret + fallback globale .env (`server/src/controllers/giftCardPublic.ts`)
+  - Frontend types: aggiunta interfaccia `SAStripeSettings` + campo `stripe` in `SATenantSettings` (`client/src/api/superadmin.ts`)
+  - Frontend UI: sezione "Stripe (Pagamenti)" con toggle on/off, campi Secret Key e Webhook Secret (password con toggle visibilita), icona CreditCard (`client/src/pages/superadmin/SATenantDetailPage.tsx`)
+  - Deploy backend + frontend su Oracle Cloud VM, PM2 restart
+  - Test verificati: gift card test mode OK, merge settings OK (Stripe non cancella SMTP/Branding), API update tenant OK
+- **Upgrade piano Klein Baby**: da FREE a STARTER (1 negozio, 3 utenti, 500 prodotti) via API superadmin
+- **Superadmin StockFlow**: email=superadmin@stockflow.it, password=admin123
+- **Portfolio personale** (repo: C:\workspace\enricomariacaruso, sito: www.enricomariacaruso.it):
+  - Aggiunto progetto "Klein Baby" con screenshot da www.kleinbaby.it e link al sito
+  - Sostituito "Gestionale Magazzino" (mockup HTML) con "StockFlow ERP" con screenshot reale, due link (sito prodotto + app demo), descrizione aggiornata SaaS multi-tenant
+  - Rimosso CSS mockup-gestionale non piu necessario
+  - Screenshot catturati con Playwright (images/kleinbaby.png, images/stockflow-erp.png)
+  - Commit e push su main → deploy automatico GitHub Pages
