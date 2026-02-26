@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Build WhatsApp message as fallback
             const waText = `Ciao! Sono ${name} (${email}${phone ? ', ' + phone : ''}).\n\n${message}`;
-            const waURL = `https://wa.me/39338171093?text=${encodeURIComponent(waText)}`;
+            const waURL = `https://wa.me/393381710933?text=${encodeURIComponent(waText)}`;
 
             // Since there is no backend API yet, redirect to WhatsApp
             btn.innerHTML = '<span>Apertura WhatsApp...</span> <i class="fab fa-whatsapp"></i>';
