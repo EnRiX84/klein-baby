@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog - Klein Baby</title>
+    <meta name="description" content="Changelog del sito Klein Baby - Cronologia delle modifiche e aggiornamenti del sito.">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Klein</span>
+                <span class="logo-sub">Baby</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#chi-siamo" class="nav-link">Chi Siamo</a></li>
+                <li><a href="index.html#brand" class="nav-link">Brand</a></li>
+                <li><a href="index.html#collezioni" class="nav-link">Collezioni</a></li>
+                <li><a href="index.html#promozioni" class="nav-link">Promozioni</a></li>
+                <li><a href="gift-card.html" class="nav-link">Gift Card</a></li>
+                <li><a href="index.html#negozio" class="nav-link">Negozio</a></li>
+                <li><a href="index.html#news" class="nav-link">News</a></li>
+                <li><a href="index.html#contatti" class="nav-link">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Changelog Content -->
+    <main class="policy-page">
+        <div class="policy-content">
+            <a href="index.html" class="policy-back"><i class="fas fa-arrow-left"></i> Torna alla Home</a>
+
+            <h1>Changelog</h1>
+            <p class="policy-updated">Cronologia delle modifiche al sito kleinbaby.it</p>
+
+            <h2>v2.2 - 26 febbraio 2026</h2>
+            <ul>
+                <li>Aggiornamento orari di apertura del negozio</li>
+                <li>Correzione indirizzo di consegna Gift Card</li>
+                <li>Form di contatto: invio messaggi via email</li>
+            </ul>
+
+            <h2>v2.1 - Febbraio 2026</h2>
+            <ul>
+                <li>Aggiunta pagina Termini di Servizio</li>
+                <li>Aggiunta pagina Changelog</li>
+            </ul>
+
+            <h2>v2.0 - 23 febbraio 2026</h2>
+            <ul>
+                <li>Lancio del sito completo con tutte le sezioni</li>
+                <li>Gift Card digitali con pagamento tramite Stripe</li>
+                <li>Cookie consent conforme al GDPR con banner e gestione preferenze</li>
+                <li>Palette multicolore ispirata all'identità visiva del negozio</li>
+            </ul>
+
+            <h2>v1.0 - Febbraio 2026</h2>
+            <ul>
+                <li>Bozza iniziale del sito</li>
+            </ul>
+
+            <a href="index.html" class="policy-back"><i class="fas fa-arrow-left"></i> Torna alla Home</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Klein Baby di Seggio Rosaria. Tutti i diritti riservati. | <a href="cookie-policy.html">Cookie Policy</a> | <a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Termini di Servizio</a> | <a href="changelog.html">Changelog</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Consenso cookie">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                Questo sito utilizza cookie tecnici necessari al funzionamento e, previo tuo consenso, cookie di terze parti (Google Maps) per mostrare la mappa del negozio. Puoi accettare tutti i cookie o proseguire con i soli cookie necessari. Per maggiori informazioni consulta la <a href="cookie-policy.html">Cookie Policy</a> e la <a href="privacy-policy.html">Privacy Policy</a>.
+            </div>
+            <div class="cookie-banner-actions">
+                <button type="button" class="cookie-btn cookie-btn-accept" id="cookieAcceptAll">Accetta Tutti</button>
+                <button type="button" class="cookie-btn cookie-btn-reject" id="cookieRejectAll">Solo Necessari</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Gear Icon -->
+    <div id="cookieGear" class="cookie-gear" title="Preferenze cookie" aria-label="Modifica preferenze cookie">
+        <i class="fas fa-cookie-bite"></i>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/cookie-consent.js"></script>
+</body>
+</html>
