@@ -190,6 +190,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // === Dynamic News from JSON ===
+    const newsGrid = document.getElementById('news-grid');
+    if (newsGrid) {
+        fetch('data/notizie.json')
+            .then(r => r.json())
+            .then(notizie => {
+                if (!notizie || notizie.length === 0) {
+                    const newsSection = document.getElementById('news');
+                    if (newsSection) newsSection.style.display = 'none';
+                    return;
+                }
+                const iconColors = ['orange', 'blue', 'green', 'purple'];
+                const iconClasses = ['fa-tags', 'fa-snowflake', 'fa-baby-carriage', 'fa-star'];
+                newsGrid.innerHTML = notizie.map((n, i) => {
+                    const colorClass = iconColors[i % iconColors.length];
+                    const iconClass = iconClasses[i % iconClasses.length];
+                    const linkHtml = n.links && n.links.length > 0
+                        ? `<a href="${n.links[0].url}" target="_blank" rel="noopener" class="news-link">${n.links[0].testo} <i class="fas fa-arrow-right"></i></a>`
+                        : '';
+                    return `<article class="news-card" data-aos="fade-up" data-aos-delay="${i * 100}">
+                    <div class="news-image">
+                        <div class="news-icon-placeholder ${colorClass}">
+                            <i class="fas ${iconClass}"></i>
+                        </div>
+                        <span class="news-date">${n.data}</span>
+                    </div>
+                    <div class="news-body">
+                        <h3>${n.titolo}</h3>
+                        <p>${n.descrizione}</p>
+                        ${linkHtml}
+                    </div>
+                </article>`;
+                }).join('');
+                newsGrid.querySelectorAll('[data-aos]').forEach(el => {
+                    if (typeof aosObserver !== 'undefined') aosObserver.observe(el);
+                });
+            })
+            .catch(() => {
+                const newsSection = document.getElementById('news');
+                if (newsSection) newsSection.style.display = 'none';
+            });
+    }
+
     // === Parallax Effect for Promo Section ===
     const promoSection = document.querySelector('.section-promo');
     if (promoSection) {

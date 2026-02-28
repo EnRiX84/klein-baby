@@ -1,0 +1,38 @@
+[
+  {
+    "titolo": "Saldi di Fine Stagione",
+    "categoria": "promo",
+    "data": "Febbraio 2026",
+    "descrizione": "Approfitta dei nostri sconti su tutta la collezione invernale! Prezzi a partire da soli 9,99 euro sulle migliori marche.",
+    "links": [
+      {
+        "testo": "Scopri di più",
+        "url": "https://wa.me/393381710933?text=Ciao!%20Vorrei%20info%20sui%20saldi."
+      }
+    ]
+  },
+  {
+    "titolo": "Collezione Invernale Disponibile",
+    "categoria": "collezione",
+    "data": "Inverno 2025/26",
+    "descrizione": "Scopri la nuova collezione autunno/inverno con piumini, giacche e felpe dei migliori brand per i tuoi ragazzi.",
+    "links": [
+      {
+        "testo": "Scopri di più",
+        "url": "https://wa.me/393381710933?text=Ciao!%20Vorrei%20info%20sulla%20collezione%20invernale."
+      }
+    ]
+  },
+  {
+    "titolo": "Nuovi Arrivi Neonato",
+    "categoria": "novita",
+    "data": "Nuovi Arrivi",
+    "descrizione": "Sono arrivate le nuove collezioni per neonati. Tutine, completi e accessori morbidi e delicati per i più piccoli.",
+    "links": [
+      {
+        "testo": "Scopri di più",
+        "url": "https://wa.me/393381710933?text=Ciao!%20Vorrei%20info%20sui%20nuovi%20arrivi%20neonato."
+      }
+    ]
+  }
+]
