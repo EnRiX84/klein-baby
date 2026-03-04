@@ -248,4 +248,94 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
     }
 
+    // === Accessories Gallery ===
+    const galleryOverlay = document.getElementById('galleryOverlay');
+    const accessoriCard = document.getElementById('accessori-card');
+
+    if (galleryOverlay && accessoriCard) {
+        const galleryImages = Array.from({length: 10}, (_, i) =>
+            `images/accessories/${String(i + 1).padStart(2, '0')}.jpg`
+        );
+        let currentIndex = 0;
+        let touchStartX = 0;
+
+        const galleryImg = document.getElementById('galleryImage');
+        const galleryCounter = document.getElementById('galleryCounter');
+        const galleryThumbnails = document.getElementById('galleryThumbnails');
+
+        // Generate thumbnails
+        galleryImages.forEach((src, i) => {
+            const thumb = document.createElement('img');
+            thumb.src = src;
+            thumb.alt = `Accessorio ${i + 1}`;
+            thumb.className = 'acc-gallery-thumb';
+            thumb.addEventListener('click', () => showImage(i));
+            galleryThumbnails.appendChild(thumb);
+        });
+
+        function showImage(index) {
+            currentIndex = index;
+            galleryImg.classList.add('fade');
+            setTimeout(() => {
+                galleryImg.src = galleryImages[index];
+                galleryImg.classList.remove('fade');
+            }, 200);
+            galleryCounter.textContent = `${index + 1} / ${galleryImages.length}`;
+            galleryThumbnails.querySelectorAll('.acc-gallery-thumb').forEach((t, i) => {
+                t.classList.toggle('active', i === index);
+            });
+            // Preload adjacent images
+            if (index > 0) { const img = new Image(); img.src = galleryImages[index - 1]; }
+            if (index < galleryImages.length - 1) { const img = new Image(); img.src = galleryImages[index + 1]; }
+        }
+
+        function openGallery() {
+            showImage(0);
+            galleryOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery() {
+            galleryOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        accessoriCard.addEventListener('click', openGallery);
+        document.getElementById('galleryClose').addEventListener('click', closeGallery);
+        document.getElementById('galleryPrev').addEventListener('click', () => {
+            showImage(currentIndex > 0 ? currentIndex - 1 : galleryImages.length - 1);
+        });
+        document.getElementById('galleryNext').addEventListener('click', () => {
+            showImage(currentIndex < galleryImages.length - 1 ? currentIndex + 1 : 0);
+        });
+
+        // Close on backdrop click
+        galleryOverlay.addEventListener('click', (e) => {
+            if (e.target === galleryOverlay || e.target.classList.contains('acc-gallery-main') || e.target.classList.contains('acc-gallery-image-container')) {
+                closeGallery();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!galleryOverlay.classList.contains('active')) return;
+            if (e.key === 'Escape') closeGallery();
+            if (e.key === 'ArrowLeft') showImage(currentIndex > 0 ? currentIndex - 1 : galleryImages.length - 1);
+            if (e.key === 'ArrowRight') showImage(currentIndex < galleryImages.length - 1 ? currentIndex + 1 : 0);
+        });
+
+        // Touch swipe
+        galleryOverlay.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        galleryOverlay.addEventListener('touchend', (e) => {
+            const diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) showImage(currentIndex < galleryImages.length - 1 ? currentIndex + 1 : 0);
+                else showImage(currentIndex > 0 ? currentIndex - 1 : galleryImages.length - 1);
+            }
+        }, { passive: true });
+    }
+
 });

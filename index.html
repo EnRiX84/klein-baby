@@ -199,6 +199,16 @@
                         <p>Abiti eleganti per battesimi, comunioni, cresime e occasioni speciali.</p>
                     </div>
                 </div>
+                <div class="collection-card collection-card-clickable" data-aos="fade-up" data-aos-delay="400" id="accessori-card">
+                    <div class="collection-icon accessori">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <div class="collection-body">
+                        <h3>Accessori</h3>
+                        <p>Borse, cappellini, sciarpe e tanto altro. Scopri la nostra selezione di accessori.</p>
+                        <span class="collection-cta">Sfoglia la galleria <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
             </div>
             <div class="text-center mt-4" data-aos="fade-up">
                 <a href="https://wa.me/393381710933?text=Ciao!%20Vorrei%20informazioni%20sulle%20collezioni%20disponibili." target="_blank" rel="noopener" class="btn btn-primary">
@@ -487,6 +497,22 @@
     <!-- Cookie Gear Icon -->
     <div id="cookieGear" class="cookie-gear" title="Preferenze cookie" aria-label="Modifica preferenze cookie">
         <i class="fas fa-cookie-bite"></i>
+    </div>
+
+    <!-- Gallery Overlay Accessori -->
+    <div class="acc-gallery-overlay" id="galleryOverlay">
+        <div class="acc-gallery-header">
+            <span class="acc-gallery-counter" id="galleryCounter">1 / 10</span>
+            <button class="acc-gallery-close" id="galleryClose" aria-label="Chiudi">&times;</button>
+        </div>
+        <div class="acc-gallery-main">
+            <button class="acc-gallery-nav acc-gallery-prev" id="galleryPrev" aria-label="Precedente"><i class="fas fa-chevron-left"></i></button>
+            <div class="acc-gallery-image-container">
+                <img class="acc-gallery-image" id="galleryImage" src="" alt="Accessorio" />
+            </div>
+            <button class="acc-gallery-nav acc-gallery-next" id="galleryNext" aria-label="Successivo"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        <div class="acc-gallery-thumbnails" id="galleryThumbnails"></div>
     </div>
 
     <script src="js/main.js"></script>

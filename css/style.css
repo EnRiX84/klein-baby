@@ -1670,6 +1670,203 @@ ul { list-style: none; }
     transform: scale(1);
 }
 
+/* === Accessori Card === */
+.collection-icon.accessori {
+    background: linear-gradient(135deg, #F3E5F5, #E1BEE7);
+    color: var(--purple);
+}
+
+.collection-card-clickable {
+    cursor: pointer;
+}
+
+.collection-card-clickable:hover {
+    border-color: var(--purple-light);
+}
+
+.collection-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.collection-card-clickable:hover .collection-cta {
+    gap: 0.8rem;
+}
+
+.collection-cta i {
+    transition: transform 0.3s;
+}
+
+.collection-card-clickable:hover .collection-cta i {
+    transform: translateX(4px);
+}
+
+/* === Accessories Gallery Overlay === */
+.acc-gallery-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.acc-gallery-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.acc-gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    flex-shrink: 0;
+}
+
+.acc-gallery-counter {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
+}
+
+.acc-gallery-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.acc-gallery-close:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.acc-gallery-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 0;
+    padding: 0 1rem;
+}
+
+.acc-gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.acc-gallery-nav:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.acc-gallery-prev {
+    left: 1.5rem;
+}
+
+.acc-gallery-next {
+    right: 1.5rem;
+}
+
+.acc-gallery-image-container {
+    max-width: 90%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acc-gallery-image {
+    max-width: 100%;
+    max-height: calc(100vh - 200px);
+    object-fit: contain;
+    border-radius: var(--radius);
+    transition: opacity 0.3s ease;
+}
+
+.acc-gallery-image.fade {
+    opacity: 0;
+}
+
+.acc-gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.5rem;
+    overflow-x: auto;
+    flex-shrink: 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.acc-gallery-thumbnails::-webkit-scrollbar {
+    height: 4px;
+}
+
+.acc-gallery-thumbnails::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+}
+
+.acc-gallery-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.4;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.acc-gallery-thumb:hover {
+    opacity: 0.7;
+}
+
+.acc-gallery-thumb.active {
+    opacity: 1;
+    border-color: var(--purple);
+    box-shadow: 0 0 12px rgba(171, 71, 188, 0.4);
+}
+
 /* === Responsive === */
 @media (max-width: 1024px) {
     .about-grid {
@@ -1701,6 +1898,19 @@ ul { list-style: none; }
 }
 
 @media (max-width: 768px) {
+    .acc-gallery-nav {
+        display: none;
+    }
+
+    .acc-gallery-image-container {
+        max-width: 100%;
+    }
+
+    .acc-gallery-thumb {
+        width: 48px;
+        height: 48px;
+    }
+
     .nav-toggle {
         display: flex;
     }
